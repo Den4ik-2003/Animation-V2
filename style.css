@@ -1,0 +1,122 @@
+.ssb-block {
+  position: relative;
+  width: 100vw;
+  height: 800px;
+  max-height: 90vh;
+  background: #000;
+  overflow: hidden;
+  font-family: "Manrope", Arial, sans-serif;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+.ssb-block canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ssb-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(0, 255, 102, 0.55);
+  text-transform: uppercase;
+  font-family: monospace;
+}
+.ssb-tag {
+  position: absolute;
+  opacity: 0.8;
+}
+.ssb-tag--tl {
+  top: 28px;
+  left: 32px;
+}
+.ssb-tag--tr {
+  top: 28px;
+  right: 32px;
+  color: #fff;
+}
+.ssb-tag--bl {
+  bottom: 28px;
+  left: 32px;
+}
+.ssb-tag--br {
+  bottom: 28px;
+  right: 32px;
+}
+.ssb-tag--sub {
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.4);
+}
+.ssb-blink {
+  animation: ssbBlink 2.4s infinite;
+}
+@keyframes ssbBlink {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.ssb-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+  z-index: 2;
+  text-align: center;
+  pointer-events: none;
+  filter: blur(0px);
+  opacity: 0;
+}
+.ssb-word-white {
+  font-family: "Unbounded", Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(38px, 7vw, 84px);
+  color: #fff;
+  line-height: 0.95;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+}
+.ssb-word-yellow {
+  font-family: "Unbounded", Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(16px, 2.4vw, 26px);
+  color: #00ff66;
+  letter-spacing: 0.05em;
+  margin-top: 6px;
+  text-shadow: 0 0 24px rgba(0, 255, 102, 0.5);
+}
+
+.ssb-title {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  font-family: "Unbounded", Arial, sans-serif;
+  font-size: clamp(13px, 1.6vw, 18px);
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.03em;
+  text-align: center;
+  pointer-events: none;
+}
+@media (max-width: 700px) {
+  .ssb-block {
+    height: 560px;
+  }
+  .ssb-title {
+    bottom: 36px;
+    font-size: 12px;
+  }
+}
